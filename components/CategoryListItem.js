@@ -8,9 +8,10 @@ import {
 
 
 export default function CategoryListItem(props) {
+    const category = props.category;
     return <View style={styles.container}>
-        <Text style={styles.title}>{props.title}</Text>
-        <Image style={styles.categoryImage} source={props.images} />
+        <Text style={styles.title}>{category.title}</Text>
+        <Image style={styles.categoryImage} source={category.imageIcon} />
     </View>
 }
 
