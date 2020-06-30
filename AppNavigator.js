@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
-import Icon from "react-native-vector-icons/Ionicons";
+import Icon from "react-native-vector-icons/AntDesign";
 
 import CategorySreen from "./screens/CategorySreen";
 import CategoriesScreen from "./screens/CategoriesScreen";
@@ -29,7 +29,7 @@ const CategoryStack = createStackNavigator({
 CategoryStack.navigationOptions = {
   tabBarLabel: "Home",
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="ios-home" size={24} color={tintColor} />
+    <Icon name="home" size={24} color={tintColor} />
   ),
   tabBarOptions: defaultTabBarOption,
 };
@@ -50,11 +50,11 @@ CartStack.navigationOptions = {
   tabBarLabel: "Cart",
   tabBarIcon: ({ tintColor }) => (
     <CartContext.Consumer>
-      {({ cartItems }) => (
+      {({ quantity }) => (
         <IconWithBadge
-          name="ios-cart"
+          name="shoppingcart"
           size={24}
-          badgeCount={cartItems.length}
+          badgeCount={quantity}
           color={tintColor}
         />
       )}
@@ -71,7 +71,7 @@ const OrderStack = createStackNavigator({
 OrderStack.navigationOptions = {
   tabBarLabel: "Orders",
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="ios-card" size={24} color={tintColor} />
+    <Icon name="wallet" size={24} color={tintColor} />
   ),
   tabBarOptions: defaultTabBarOption,
 };
@@ -84,7 +84,7 @@ const SettingStack = createStackNavigator({
 SettingStack.navigationOptions = {
   tabBarLabel: "Settings",
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="ios-settings" size={24} color={tintColor} />
+    <Icon name="setting" size={24} color={tintColor} />
   ),
   tabBarOptions: defaultTabBarOption,
 };
