@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import * as CategoryIcons  from '../assets/CategoryImg';
 
 export default function CategoryListItem(props) {
   const { category } = props;
@@ -16,7 +17,7 @@ export default function CategoryListItem(props) {
     >
       <View style={styles.container}>
         <Text style={styles.title}>{category.title}</Text>
-        <Image style={styles.categoryImage} source={category.imageIcon} />
+        <Image style={styles.categoryImage} source={CategoryIcons[category.icon]}/>
       </View>
     </TouchableOpacity>
   );

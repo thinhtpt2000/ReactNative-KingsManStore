@@ -1,39 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 import CategoryListItem from "../components/CategoryListItem";
-// Import Images Category
-import SuitImage from "../assets/suit.png";
-import TieImage from "../assets/tie.png";
-import SunGlassImage from "../assets/sun-glasses.png";
-import WatchImage from "../assets/watch.png";
-import TrousersImage from "../assets/trousers.png";
-import CaneImage from "../assets/cane.png";
-import UmbrellaImage from "../assets/umbrella.png";
-
-const categoriesInitValue = [
-  { id: 1, title: "Suit Items", imageIcon: SuitImage },
-  { id: 2, title: "Trousers Items", imageIcon: TrousersImage },
-  { id: 3, title: "Tie Items", imageIcon: TieImage },
-  { id: 4, title: "Sun Glasses Items", imageIcon: SunGlassImage },
-  { id: 5, title: "Watch Items", imageIcon: WatchImage },
-  { id: 6, title: "Cane Items", imageIcon: CaneImage },
-  { id: 7, title: "Umbrella Items", imageIcon: UmbrellaImage },
-];
+import axios from "axios";
 
 const CategoriesScreen = (props) => {
   const [categories, setCategories] = useState([]);
-  const [isInit, setInit] = useState(false);
 
-  const initCategories = () => setCategories(categoriesInitValue);
-
-  const initValue = () => {
-    if (!isInit) {
-      initCategories();
-      setInit(true);
-    }
-  };
-
-  initValue();
+  useEffect(async () => {
+    await axios
+      .get("/categories")
+      .then((res) => {
+        // console.log(res.data);
+        setCategories(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   const { navigation } = props;
 
@@ -42,19 +25,22 @@ const CategoriesScreen = (props) => {
       <FlatList
         style={styles.flatList}
         data={categories}
-        renderItem={({ item }) => 
-        <CategoryListItem 
-        category={item} 
-        onPress={() => navigation.navigate('CategorySreen', {
-          categoryName: item.title
-        })}
-        />
-    }
-        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <CategoryListItem
+            category={item}
+            onPress={() =>
+              navigation.navigate("CategorySreen", {
+                categoryName: item.title,
+                categoryId: item.id,
+              })
+            }
+          />
+        )}
+        keyExtractor={(item) => `${item.id}`}
       />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -71,7 +57,7 @@ const styles = StyleSheet.create({
 });
 
 CategoriesScreen.navigationOptions = {
-    title: 'Home'
-}
+  title: "Home",
+};
 
 export default CategoriesScreen;

@@ -1,0 +1,61 @@
+{
+    "categories": [
+        { "id": 1, "title": "Suit Items", "icon": "suit" },
+        { "id": 2, "title": "Trousers Items", "icon": "trousers" },
+        { "id": 3, "title": "Tie Items", "icon": "tie" },
+        { "id": 4, "title": "Sun Glasses Items", "icon": "sunGlasses" },
+        { "id": 5, "title": "Watch Items", "icon": "watch" },
+        { "id": 6, "title": "Cane Items", "icon": "cane" },
+        { "id": 7, "title": "Umbrella Items", "icon": "umbrella" }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Vest Đen Viền Trắng",
+            "images": [
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/20/c4/c9/a3cd43cc74f959b5963563b9a098c85f.jpg"
+              },
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w80/ts/product/e9/50/37/edfc0c5059c1eecf837e700d42a20356.jpg"
+              }
+            ],
+            "price": 500000,
+            "category": 1
+        },
+        {
+            "id": 2,
+            "name": "Vest Xanh Chấm Bi",
+            "images": [
+              {
+                "url":
+                  "http://cavino.vn/wp-content/uploads/2017/10/vest-xanh-cham-bi-2.jpg"
+              },
+              {
+                "url":
+                  "http://cavino.vn/wp-content/uploads/2017/10/vest-xanh-cham-bi1.jpg"
+              }
+            ],
+            "price": 399000,
+            "category": 1
+        },
+        {
+            "id": 3,
+            "name": "Cà Vạt Đen Cao Cấp",
+            "images": [
+              {
+                "url":
+                  "https://cavat.com/wp-content/uploads/2017/01/cavat-den-cao-cap1.jpg"
+              },
+              {
+                "url":
+                  "https://cavat.com/wp-content/uploads/2017/01/cavat-den-cao-cap2.jpg"
+              }
+            ],
+            "price": 120000,
+            "category": 3
+        }
+    ]
+}
