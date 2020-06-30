@@ -40,7 +40,8 @@
             ],
             "price": 399000,
             "category": 1
-        },
+        }
+        ,
         {
             "id": 3,
             "name": "Cà Vạt Đen Cao Cấp",
@@ -56,6 +57,91 @@
             ],
             "price": 120000,
             "category": 3
+        }
+        ,
+        {
+            "id": 4,
+            "name": "Áo Vest Nam Kaki",
+            "images": [
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/fe/8b/eb/f46dd4deb87caded06419f050aa3f526.jpg"
+              },
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/db/ff/2b/2e61ec3b23bf677b7324ec4b40d3c727.jpg"
+              }
+            ],
+            "price": 235000,
+            "category": 1
+        }
+        ,
+        {
+            "id": 5,
+            "name": "Kính Mát Nam Thời Trang",
+            "images": [
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/62/79/55/17c049ec9f50d244d4cc40617121f756.jpg"
+              },
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/a0/be/97/2dc0b68a96b06a9145884c4107fbc69d.jpg"
+              }
+            ],
+            "price": 140000,
+            "category": 4
+        }
+        ,
+        {
+            "id": 6,
+            "name": "Đồng Hồ Nam Kassak",
+            "images": [
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/17/0a/81/420bf9d4a8ea4becefc2acfc29e8cc79.jpg"
+              },
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/media/catalog/producttmp/85/81/76/99d1687b677c5e872a1388aae0fd0251.jpg"
+              }
+            ],
+            "price": 200000,
+            "category": 5
+        }
+        ,
+        {
+            "id": 7,
+            "name": "Gậy Gỗ Batoong",
+            "images": [
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/d8/09/68/4036665af03e0c59b2e233c10c4ee8ca.jpg"
+              },
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/7c/7e/e8/4a6cd8471adba74309d72f9e65a3afe9.jpg"
+              }
+            ],
+            "price": 550000,
+            "category": 6
+        }
+        ,
+        {
+            "id": 8,
+            "name": "Ô Golf 2 Tầng Kalila",
+            "images": [
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/f1/19/87/5dab7d139b0090af3693d995d93c17bd.jpg"
+              },
+              {
+                "url":
+                  "https://salt.tikicdn.com/cache/w390/ts/product/40/94/84/388b473e12157497e1d402edae402b47.jpg"
+              }
+            ],
+            "price": 275000,
+            "category": 7
         }
     ]
 }
