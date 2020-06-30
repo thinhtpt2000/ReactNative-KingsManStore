@@ -24,11 +24,11 @@ const CategoriesScreen = (props) => {
   const [categories, setCategories] = useState([]);
   const [isInit, setInit] = useState(false);
 
-  const initCategory = () => setCategories(categoriesInitValue);
+  const initCategories = () => setCategories(categoriesInitValue);
 
   const initValue = () => {
     if (!isInit) {
-      initCategory();
+      initCategories();
       setInit(true);
     }
   };
