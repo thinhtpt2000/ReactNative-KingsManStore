@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, FlatList, View } from "react-native";
 import ProductListItem from "../components/ProductListItem";
 import axios from "axios";
+import { CartContext } from "../contexts/Cart";
 
 const CategorySreen = (props) => {
   const [products, setProducts] = useState([]);
@@ -13,7 +14,7 @@ const CategorySreen = (props) => {
       const res = await axios.get(`/products?category=${categoryId}`);
       const data = await res.data;
       setProducts(data);
-    }
+    };
     fetchData();
     // await axios
     //   .get(`/products?category=${categoryId}`)
@@ -33,7 +34,9 @@ const CategorySreen = (props) => {
       numColumns={2}
       renderItem={({ item }) => (
         <View style={styles.wrapper}>
-          <ProductListItem product={item} />
+          <CartContext.Consumer>
+            {({addToCart}) => <ProductListItem product={item} onAddToCartClick={()=> addToCart(item)}/>}
+          </CartContext.Consumer>
         </View>
       )}
       keyExtractor={(item) => `${item.id}`}
