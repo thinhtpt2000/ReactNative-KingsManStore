@@ -6,16 +6,21 @@ import axios from "axios";
 const CategoriesScreen = (props) => {
   const [categories, setCategories] = useState([]);
 
-  useEffect(async () => {
-    await axios
-      .get("/categories")
-      .then((res) => {
-        // console.log(res.data);
-        setCategories(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios
+            .get("/categories");
+      const data = await res.data;
+      setCategories(data);
+    }
+    fetchData();
+    // await axios
+    //   .get("/categories")
+    //   .then((res) => {
+    //     // console.log(res.data);
+    //     setCategories(res.data);
+    //   })
+
   }, []);
 
   const { navigation } = props;

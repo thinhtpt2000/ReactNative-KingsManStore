@@ -8,16 +8,22 @@ const CategorySreen = (props) => {
   const { navigation } = props;
   const categoryId = navigation.getParam("categoryId");
 
-  useEffect(async () => {
-    await axios
-      .get(`/products?category=${categoryId}`)
-      .then((res) => {
-        // console.log(res.data);
-        setProducts(res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get(`/products?category=${categoryId}`);
+      const data = await res.data;
+      setProducts(data);
+    }
+    fetchData();
+    // await axios
+    //   .get(`/products?category=${categoryId}`)
+    //   .then((res) => {
+    //     // console.log(res.data);
+    //     setProducts(res.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   }, []);
 
   return (
